@@ -1,0 +1,53 @@
+[
+    {
+      "id": 1,
+      "name": "Маргаритта",
+      "price": 9,
+      "categories": "Вегетарианская",
+      "rating": 3,
+      "types": ["тонкое", "традиционное"],
+      "sizes": [26, 30, 40],
+      "image": "margherita.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Пепперони",
+      "price": 11,
+      "categories": "Мясные",
+      "rating": 5,
+      "types": ["традиционное"],
+      "sizes": [26, 40],
+      "image": "pepperoni.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Вегетарианская",
+      "price": 10,
+      "categories": "Вегетарианская",
+      "rating": 1,
+      "types": ["тонкое", "традиционное"],
+      "sizes": [30, 40],
+      "image": "vegetarian.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Куриная",
+      "price": 12,
+      "categories": "Мясные",
+      "rating": 4,
+      "types": ["тонкое"],
+      "sizes": [26],
+      "image": "bbq_chicken.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Мексиканская",
+      "price": 14,
+      "categories": "Острые",
+      "rating": 2,
+      "types": ["тонкое"],
+      "sizes": [26, 30],
+      "image": "bbq_chicken.jpg"
+    }
+  ]
+  
