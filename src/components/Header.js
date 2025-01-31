@@ -1,17 +1,21 @@
+import { Link } from "react-router"
+
 import HeaderCart from "./HeaderCart"
 
-function Header({ cartCount, cartPrice}) {
+function Header({ cartPizzas, totalPrice, totalCount}) {
     return(
         <div className="header">
         <div className="container">
-          <div className="header__logo">
-            <img width="38" src="./img/pizza-logo.svg" alt="Pizza logo" />
-            <div>
-              <h1>React Pizza</h1>
-              <p>самая вкусная пицца во вселенной</p>
+          <Link to='/'>
+            <div className="header__logo">
+              <img width="38" src="./img/pizza-logo.svg" alt="Pizza logo" />
+              <div>
+                <h1>React Pizza</h1>
+                <p>самая вкусная пицца во вселенной</p>
+              </div>
             </div>
-          </div>
-          <HeaderCart cartCount={cartCount} cartPrice={cartPrice}/>
+          </Link>
+          <HeaderCart cartPizzas={cartPizzas} totalPrice={totalPrice} totalCount={totalCount}/>
         </div>
       </div>
     )

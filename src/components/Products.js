@@ -1,12 +1,11 @@
 import Product from "./Product";
 
-
-function Products({ setCartCount, cartCount, setcartPrice, cartPrice, filterPizzas }) {
+function Products({ setCartCount, cartCount, setCartPrice, cartPrice, filterPizzas, cartPizzas, setCartPizzas }) {
 
     return(
         <div className="content__items">
             {filterPizzas.map((pizza) => (
-                <Product setCartCount={setCartCount} cartCount={cartCount} setcartPrice={setcartPrice} cartPrice={cartPrice} key={pizza.id} pizza={pizza} />
+                <Product setCartCount={setCartCount} cartCount={cartCount} setCartPrice={setCartPrice} cartPrice={cartPrice} key={pizza.id} pizza={pizza} cartPizzas={cartPizzas} setCartPizzas={setCartPizzas} />
             ))}
           </div>
     )

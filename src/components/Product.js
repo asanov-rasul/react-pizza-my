@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Product({ pizza, setCartCount, cartCount, setcartPrice, cartPrice }) {
+function Product({ pizza, setCartCount, cartCount, setCartPrice, cartPrice, cartPizzas, setCartPizzas }) {
     const [count, setCount] = useState(0)
     const [pizzaWeight, setPizzaWeight] = useState(pizza.types[0])
     const [pizzaSize, setPizzaSize] = useState(pizza.sizes[0])
@@ -11,7 +11,6 @@ function Product({ pizza, setCartCount, cartCount, setcartPrice, cartPrice }) {
 
     const pizzaSizeer = (e) => {
         setPizzaSize(e)
-
     }
 
     const pizzaWeights = ["тонкое", "традиционное"];
@@ -37,14 +36,14 @@ function Product({ pizza, setCartCount, cartCount, setcartPrice, cartPrice }) {
                 <ul>
                     {pizzaWeights.map((item, index) => 
                         <li key={index}
-                            className={`${item == pizzaWeight ? 'active' : ''}${pizza.types.includes(item) ? "" : "disabled"}`}
+                            className={`${item === pizzaWeight ? 'active' : ''}${pizza.types.includes(item) ? "" : "disabled"}`}
                             onClick={() => pizzaWeighter(item)}>{item}</li>
                     )}
                 </ul>
                 <ul>
                     {pizzaSizes.map((item, index) => 
                         <li key={index}
-                            className={`${item == pizzaSize ? 'active' : ''} ${pizza.sizes.includes(item) ? "" : "disabled"}`}
+                            className={`${item === pizzaSize ? 'active' : ''} ${pizza.sizes.includes(item) ? "" : "disabled"}`}
                             onClick={() => pizzaSizeer(item)}>{item} см.</li>
                     )}
                 </ul>
@@ -52,7 +51,7 @@ function Product({ pizza, setCartCount, cartCount, setcartPrice, cartPrice }) {
                 <div className="pizza-block__bottom">
                 <div className="pizza-block__price">от {Math.floor(`${pizza.price + pizzaSize * 1.3}`)} ₽</div>
                 <div className="button button--outline button--add"
-                     onClick={() => { setCount(count + 1) ;setCartCount(cartCount + 1); setcartPrice(cartPrice + pizza.price)}}>
+                     onClick={() => { setCount(count + 1) ;setCartCount(cartCount + 1); setCartPrice(cartPrice + Math.floor(`${pizza.price + pizzaSize * 1.3}`)); setCartPizzas([...cartPizzas, {id: pizza.id, img: pizza.image, name: pizza.name, size: pizzaSize,type: pizzaWeight, count: 1, price: Math.floor(`${pizza.price + pizzaSize * 1.3}`)}])}}>
                     <svg
                     width="12"
                     height="12"

@@ -1,13 +1,11 @@
 import { Link } from "react-router";
 
-function HeaderCart({ cartCount, cartPrice }) {
-
-
+function HeaderCart({ cartPizzas, totalPrice, totalCount }) {
     return(
-      <Link to={cartCount >= 1 ? "/cart" : "/cart-empty"}>
+      <Link to={cartPizzas.length >= 1 ? "/cart" : "/cart-empty"}>
         <div className="header__cart">
             <div className="button button--cart">
-              <span>{cartPrice} ₽</span>
+              <span>{totalPrice} ₽</span>
               <div className="button__delimiter"></div>
               <svg
                 width="18"
@@ -38,7 +36,7 @@ function HeaderCart({ cartCount, cartPrice }) {
                   stroke-linejoin="round"
                 />
               </svg>
-              <span>{cartCount}</span>
+              <span>{totalCount}</span>
             </div>
           </div>
         </Link>
